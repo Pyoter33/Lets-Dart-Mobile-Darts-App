@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable-v24/baseline_lightbulb_24.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/dart_right.xml" value="0.278515625" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/floating_button.xml" value="0.278515625" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/green_back.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/grey_back.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/hint_background.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/hint_background_checkouts.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/ic_baseline_arrow_right_24.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/light_border.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/lightbulb_background_transition.xml" value="0.1" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/lightbulb_off.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/lightbulb_on.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/stats_background_selector.xml" value="0.301953125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/advanced_list_item.xml" value="0.2" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/basic_list_item.xml" value="0.22301912568306012" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/choose_players_fragment.xml" value="0.22301912568306012" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/choose_players_tournament_fragment.xml" value="0.22301912568306012" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/create_league_fragment.xml" value="0.19467213114754098" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/create_player_dialog.xml" value="0.264" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/finished_game_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/finished_league_game_fragment.xml" value="0.180078125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/game_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/game_statistics_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/league_games_finished_list_item.xml" value="0.264" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/league_games_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/league_games_list_item.xml" value="0.22301912568306012" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/league_list_item.xml" value="0.192578125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/league_pager_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/league_players_list_item.xml" value="0.192578125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/league_standings_fragment.xml" value="0.12578125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/matchups_list_item.xml" value="0.2" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/menu_fragment.xml" value="0.22301912568306012" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/player_manager_fragment.xml" value="0.19467213114754098" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/prepare_game_fragment.xml" value="0.183984375" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/rename_player_dialog.xml" value="0.18169398907103826" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/rules_fragment.xml" value="0.12578125" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/statistics_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/statistics_list_fragment.xml" value="0.14192807957153789" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/statistics_list_item.xml" value="0.4" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/tournament_matchups_fragment.xml" value="0.183984375" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/tournament_pager_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/tournament_rules_fragment.xml" value="0.17144808743169399" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/tournaments_menu_fragment.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

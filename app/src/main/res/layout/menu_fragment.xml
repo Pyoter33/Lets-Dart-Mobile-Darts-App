@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menuMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_default"
+        tools:context=".fragments.MenuFragment">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/lets_dart_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/firstRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo">
+
+            <ImageButton
+                android:id="@+id/buttonPlayNow"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button_background_selector"
+                android:scaleType="fitCenter"
+                android:src="@drawable/play_now_background">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/buttonPlayers"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button_background_selector"
+                android:scaleType="fitCenter"
+                android:src="@drawable/players_background" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/secondRow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstRow">
+
+            <ImageButton
+                android:id="@+id/buttonTournaments"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button_background_selector"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tournaments_background">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/buttonLeagues"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button_background_selector"
+                android:scaleType="fitCenter"
+                android:src="@drawable/leagues_background" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/thirdRow"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:weightSum="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondRow"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageButton
+                android:id="@+id/buttonStatistics"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/menu_button_background_selector"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/stats_background" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

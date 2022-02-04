@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="gameViewModel"
+            type="com.example.letsdart.viewModels.game.GameViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A6BFDD"
+        tools:context=".fragments.GameFragment"
+        android:animateLayoutChanges="true">
+
+        <ImageButton
+            android:id="@+id/imageButtonLightbulb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/numbersLayout"
+            android:src="@drawable/lightbulb_off"
+            android:background="@android:color/transparent"
+            android:layout_marginBottom="6dp"
+            android:layout_marginEnd="6dp"
+            android:animateLayoutChanges="true"
+            />
+
+        <FrameLayout
+            android:id="@+id/layoutHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/imageButtonLightbulb"
+            app:layout_constraintBottom_toTopOf="@id/numbersLayout"
+            android:background="@drawable/hint_background_no_checkouts"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="6dp"
+            android:visibility="invisible"
+            android:animateLayoutChanges="true"
+            >
+            <TextView
+                android:id="@+id/textHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text= "@string/text_no_checkouts"
+            />
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/player2Layout"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/grey_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player1Layout">
+
+            <TextView
+                android:id="@+id/playerName2"
+                style="@style/text_normal"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintEnd_toStartOf="@+id/separator21"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textScore2"
+                style="@style/number_bold"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@{gameViewModel.player2.mainScore.toString()}"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="44sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/separator21"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator24" />
+
+            <View
+                android:id="@+id/separator21"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.30"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partialScore23"
+                style="@style/number_normal"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{gameViewModel.player2.partialScore[2]}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:flow_horizontalAlign="center"
+                app:flow_verticalAlign="center"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintEnd_toStartOf="@+id/separator22"
+                app:layout_constraintStart_toEndOf="@+id/separator26"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/separator25"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:background="#3C3B3B"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.43"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partialScore22"
+                style="@style/number_normal"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{gameViewModel.player2.partialScore[1]}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:flow_horizontalAlign="center"
+                app:flow_verticalAlign="center"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintEnd_toStartOf="@+id/separator26"
+                app:layout_constraintStart_toEndOf="@+id/separator25"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/separator26"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:background="#3C3B3B"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.56"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partialScore21"
+                style="@style/number_normal"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{gameViewModel.player2.partialScore[0]}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:flow_horizontalAlign="center"
+                app:flow_verticalAlign="center"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintEnd_toStartOf="@+id/separator25"
+                app:layout_constraintStart_toEndOf="@+id/separator21"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/separator24"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:background="#3C3B3B"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35" />
+
+            <!--value???                -->
+            <TextView
+                android:id="@+id/roundScore2"
+                style="@style/number_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="36sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/separator22"
+                app:layout_constraintStart_toEndOf="@+id/separator21"
+                app:layout_constraintTop_toBottomOf="@+id/separator24" />
+<!--                android:text="@{gameViewModel.player2.roundScore}"-->
+
+
+            <View
+                android:id="@+id/separator22"
+                style="@style/number_normal"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.69"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textDouble2"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/double_info"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintStart_toEndOf="@+id/separator22"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textValueDouble2"
+                style="@style/number_normal"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{gameViewModel.player2.doubles.toString()}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintEnd_toStartOf="@+id/separator23"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textTriple2"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/triple_info"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator27"
+                app:layout_constraintStart_toEndOf="@+id/separator22"
+                app:layout_constraintTop_toBottomOf="@+id/separator24" />
+
+            <TextView
+                android:id="@+id/textValueTriple2"
+                style="@style/number_normal"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{gameViewModel.player2.triples.toString()}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator27"
+                app:layout_constraintEnd_toStartOf="@+id/separator23"
+                app:layout_constraintTop_toBottomOf="@+id/separator24" />
+
+            <View
+                android:id="@+id/separator23"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@+id/separator27"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textSets2"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/sets_info"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintStart_toEndOf="@+id/separator23"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textValueSets2"
+                style="@style/number_normal"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{gameViewModel.player2.wonSets.toString()}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textLegs2"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/legs_info"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator27"
+                app:layout_constraintStart_toEndOf="@+id/separator23"
+                app:layout_constraintTop_toBottomOf="@+id/separator24" />
+
+            <TextView
+                android:id="@+id/textValueLegs2"
+                style="@style/number_normal"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{gameViewModel.player2.wonLegs.toString()}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator27"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator24" />
+
+            <View
+                android:id="@+id/separator27"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginEnd="4dp"
+                android:background="#3C3B3B"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/separator22"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67" />
+
+            <TextView
+                android:id="@+id/textAverage2"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/avg_symbol"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/separator22"
+                app:layout_constraintTop_toBottomOf="@+id/separator27" />
+
+            <TextView
+                android:id="@+id/textValueAverage2"
+                style="@style/number_normal"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator27" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/player1Layout"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/green_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/playerName1"
+                style="@style/text_normal"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintEnd_toStartOf="@+id/separator11"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Krzysiek77" />
+
+            <TextView
+                android:id="@+id/textScore1"
+                style="@style/number_bold"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@{gameViewModel.player1.mainScore.toString()}"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="44sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/separator11"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator14"
+                tools:text="501" />
+
+            <View
+                android:id="@+id/separator11"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.30
+"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partialScore13"
+                style="@style/number_normal"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{gameViewModel.player1.partialScore[2]}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:flow_horizontalAlign="center"
+                app:flow_verticalAlign="center"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintEnd_toStartOf="@+id/separator12"
+                app:layout_constraintStart_toEndOf="@+id/separator16"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="T20" />
+
+            <View
+                android:id="@+id/separator15"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:background="#3C3B3B"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.43"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partialScore12"
+                style="@style/number_normal"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{gameViewModel.player1.partialScore[1]}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:flow_horizontalAlign="center"
+                app:flow_verticalAlign="center"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintEnd_toStartOf="@+id/separator16"
+                app:layout_constraintStart_toEndOf="@+id/separator15"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="5" />
+
+            <View
+                android:id="@+id/separator16"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:background="#3C3B3B"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.56"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partialScore11"
+                style="@style/number_normal"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{gameViewModel.player1.partialScore[0]}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:flow_horizontalAlign="center"
+                app:flow_verticalAlign="center"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintEnd_toStartOf="@+id/separator15"
+                app:layout_constraintStart_toEndOf="@+id/separator11"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="5" />
+
+            <View
+                android:id="@+id/separator14"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:background="#3C3B3B"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35" />
+
+            <TextView
+                android:id="@+id/roundScore1"
+                style="@style/number_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="36sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/separator12"
+                app:layout_constraintStart_toEndOf="@+id/separator11"
+                app:layout_constraintTop_toBottomOf="@+id/separator14"
+                tools:text="15" />
+<!--            android:text="@{gameViewModel.player1.roundScore}"-->
+            <View
+                android:id="@+id/separator12"
+                style="@style/number_normal"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.69"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textDouble1"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/double_info"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintStart_toEndOf="@+id/separator12"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textValueDouble1"
+                style="@style/number_normal"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{gameViewModel.player1.doubles.toString()}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintEnd_toStartOf="@+id/separator13"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/textTriple1"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/triple_info"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator17"
+                app:layout_constraintStart_toEndOf="@+id/separator12"
+                app:layout_constraintTop_toBottomOf="@+id/separator14" />
+
+            <TextView
+                android:id="@+id/textValueTriple1"
+                style="@style/number_normal"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{gameViewModel.player1.triples.toString()}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator17"
+                app:layout_constraintEnd_toStartOf="@+id/separator13"
+                app:layout_constraintTop_toBottomOf="@+id/separator14"
+                tools:text="5" />
+
+            <View
+                android:id="@+id/separator13"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@+id/separator17"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textSets1"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/sets_info"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintStart_toEndOf="@+id/separator13"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textValueSets1"
+                style="@style/number_normal"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{gameViewModel.player1.wonSets.toString()}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="10" />
+
+            <TextView
+                android:id="@+id/textLegs1"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/legs_info"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator17"
+                app:layout_constraintStart_toEndOf="@+id/separator13"
+                app:layout_constraintTop_toBottomOf="@+id/separator14" />
+
+            <TextView
+                android:id="@+id/textValueLegs1"
+                style="@style/number_normal"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{gameViewModel.player1.wonLegs.toString()}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/separator17"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator14"
+                tools:text="0" />
+
+            <View
+                android:id="@+id/separator17"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginEnd="4dp"
+                android:background="#3C3B3B"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/separator12"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67" />
+
+            <TextView
+                android:id="@+id/textAverage1"
+                style="@style/text_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/avg_symbol"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/separator12"
+                app:layout_constraintTop_toBottomOf="@+id/separator17" />
+
+            <TextView
+                android:id="@+id/textValueAverage1"
+                style="@style/number_normal"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator17"
+                tools:text="141.23" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/numbersLayout"
+            android:layout_width="0dp"
+            android:layout_height="330dp"
+            android:background="#B6B5B5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/firstRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="1dp"
+                android:weightSum="7"
+                app:layout_constraintBottom_toTopOf="@+id/secondRow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo1"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(1)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no1"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo2"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(2)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no2"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo3"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(3)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no3"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo4"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(4)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no4"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo5"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(5)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no5"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo6"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(6)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no6"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo7"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(7)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no7"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/secondRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:weightSum="7"
+                app:layout_constraintBottom_toTopOf="@+id/thirdRow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstRow">
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo8"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(8)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no8"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo9"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(9)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no9"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo10"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(10)}"
+                    android:textAlignment="center"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no10"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo11"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(11)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no11"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo12"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(12)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no12"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo13"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(13)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no13"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo14"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(14)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no14"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/thirdRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="7"
+                app:layout_constraintBottom_toTopOf="@+id/fourthRow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secondRow">
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo15"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(15)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no15"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo16"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(16)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no16"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo17"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(17)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no17"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo18"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(18)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no18"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo19"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(19)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no19"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo20"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(20)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no20"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo25"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(25)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no25"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fourthRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="7"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thirdRow">
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonNo0"
+                    android:layout_width="55dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> gameViewModel.onClickNumber(0)}"
+                    app:nb_backgroundColor="#FFFFFF"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#A6BFDD"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_no0"
+                    app:nb_textColor="#000000"
+                    app:nb_textSize="22sp" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonDouble"
+                    android:layout_width="105dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="2"
+                    android:onClick="@{() -> gameViewModel.onClickDouble()}"
+                    android:padding="0dp"
+                    app:nb_backgroundColor="#DAA700"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#DAA700"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_double"
+                    app:nb_textColor="#FFFFFF"
+                    app:nb_textSize="22sp"
+                    app:nb_textStyle="bold" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonTriple"
+                    android:layout_width="105dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="2"
+                    android:onClick="@{() -> gameViewModel.onClickTriple()}"
+                    android:padding="0dp"
+                    app:nb_backgroundColor="#F3420B"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#F3420B"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_triple"
+                    app:nb_textColor="#FFFFFF"
+                    app:nb_textSize="22sp"
+                    app:nb_textStyle="bold" />
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/buttonUndo"
+                    android:layout_width="105dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="2"
+                    android:onClick="@{() -> gameViewModel.onClickUndo()}"
+                    android:padding="0dp"
+                    app:nb_backgroundColor="#FF0000"
+                    app:nb_borderColor="#3E3C3C"
+                    app:nb_borderWidth="3dp"
+                    app:nb_focusColor="#FF0000"
+                    app:nb_radius="3dp"
+                    app:nb_text="@string/text_undo"
+                    app:nb_textColor="#FFFFFF"
+                    app:nb_textSize="22sp"
+                    app:nb_textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

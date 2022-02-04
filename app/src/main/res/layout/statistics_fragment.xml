@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_player_name"
+            style="@style/text_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Pyoter" />
+
+        <FrameLayout
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_player_name" />
+
+        <ScrollView
+            style="@style/text_normal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator">
+
+            <TableLayout
+                android:id="@+id/layoutTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="4dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:text="@string/text_basic_stats"
+                        android:textColor="@color/primary"
+                        android:textSize="22sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:weightSum="5.4">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_games"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:id="@+id/textTotalGames"
+                        android:layout_weight="1"
+                        android:textSize="17sp"
+                        tools:text="20"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_wins"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textTotalWins"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="17sp"
+                        tools:text="12"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_defeats"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textTotalDefeats"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="17sp"
+                        tools:text="8"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_won_legs"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textTotalWonLegs"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:text="32" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_lost_legs"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textTotalLostLegs"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:text="12" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_points"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textTotalPoints"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:text="2002312" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_darts"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textTotalDarts"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:text="321424" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_average"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textAverage"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:text="32.1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_singles"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textTotalSingles"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:text="212" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_doubles"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textTotalDoubles"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:text="41" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_weight="1.7"
+                        android:text="@string/text_total_triples"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textTotalTriples"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:text="68" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="@string/text_detailed_stats"
+                        android:textColor="@color/primary"
+                        android:textSize="22sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/buttonPercentages"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_weight="0.5"
+                        android:text="@string/text_percentages" />
+
+                    <Button
+                        android:id="@+id/buttonTotals"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_weight="0.5"
+                        android:text="@string/text_totals" />
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

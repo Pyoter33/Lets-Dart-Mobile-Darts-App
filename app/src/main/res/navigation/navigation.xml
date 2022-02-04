@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.letsdart.fragments.GameFragment"
+        android:label="GameFragment">
+        <argument
+            android:name="rules"
+            app:argType="com.example.letsdart.models.general.Rules" />
+        <action
+            android:id="@+id/action_gameFragment_to_finishedLeagueGameFragment"
+            app:destination="@id/finishedLeagueGameFragment"
+            app:popUpTo="@id/menuFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_leaguePagerFragment"
+            app:destination="@id/leaguePagerFragment"
+            app:popUpTo="@id/leagueMenuFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <argument
+            android:name="matchup"
+            app:argType="com.example.letsdart.models.tournament.Matchup" />
+    </fragment>
+    <fragment
+        android:id="@+id/prepareGameFragment"
+        android:name="com.example.letsdart.fragments.PrepareGameFragment"
+        android:label="PrepareGameFragment">
+        <action
+            android:id="@+id/action_prepareGameFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.letsdart.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/menu_fragment">
+        <action
+            android:id="@+id/action_menuFragment_to_prepareGameFragment"
+            app:destination="@id/prepareGameFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_playerManagerFragment"
+            app:destination="@id/playerManagerFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_leagueMenuFragment"
+            app:destination="@id/leagueMenuFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_tournamentsMenuFragment"
+            app:destination="@id/tournamentsMenuFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_statisticsListFragment"
+            app:destination="@id/statisticsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerManagerFragment"
+        android:name="com.example.letsdart.fragments.PlayerManagerFragment"
+        android:label="PlayerManagerFragment" />
+    <fragment
+        android:id="@+id/leagueMenuFragment"
+        android:name="com.example.letsdart.fragments.league.LeaguesMenuFragment"
+        android:label="LeagueMenuFragment">
+        <action
+            android:id="@+id/action_leagueMenuFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/action_leagueMenuFragment_to_leaguePagerFragment"
+            app:destination="@id/leaguePagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.letsdart.fragments.league.RulesFragment"
+        android:label="RulesFragment">
+        <action
+            android:id="@+id/action_rulesFragment_to_choosePlayersFragment"
+            app:destination="@id/choosePlayersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choosePlayersFragment"
+        android:name="com.example.letsdart.fragments.league.ChoosePlayersFragment"
+        android:label="ChoosePlayersFragment">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="rules"
+            app:argType="com.example.letsdart.models.general.Rules" />
+        <action
+            android:id="@+id/action_choosePlayersFragment_to_leaguePagerFragment"
+            app:destination="@id/leaguePagerFragment"
+            app:popUpTo="@id/leagueMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaguePagerFragment"
+        android:name="com.example.letsdart.fragments.league.LeaguePagerFragment"
+        android:label="league_pager_fragment"
+        tools:layout="@layout/league_pager_fragment">
+        <argument
+            android:name="leagueId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_leaguePagerFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishedLeagueGameFragment"
+        android:name="com.example.letsdart.fragments.FinishedGameFragment"
+        android:label="FinishedLeagueGameFragment">
+        <action
+            android:id="@+id/action_finishedLeagueGameFragment_to_leaguePagerFragment"
+            app:destination="@id/leaguePagerFragment"
+            app:popUpTo="@id/leagueMenuFragment" />
+        <argument
+            android:name="firstPlayerResults"
+            app:argType="com.example.letsdart.models.general.Results" />
+        <argument
+            android:name="secondPlayerResults"
+            app:argType="com.example.letsdart.models.general.Results" />
+        <action
+            android:id="@+id/action_finishedLeagueGameFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/leagueMenuFragment" />
+        <action
+            android:id="@+id/action_finishedLeagueGameFragment_to_tournamentPagerFragment"
+            app:destination="@id/tournamentPagerFragment"
+            app:popUpTo="@id/leagueMenuFragment" />
+        <argument
+            android:name="matchup"
+            app:argType="com.example.letsdart.models.tournament.Matchup" />
+        <action
+            android:id="@+id/action_finishedLeagueGameFragment_to_statisticsFragment"
+            app:destination="@id/gameStatisticsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tournamentPagerFragment"
+        android:name="com.example.letsdart.fragments.tournament.TournamentPagerFragment"
+        android:label="TournamentPagerFragment">
+        <argument
+            android:name="tournamentID"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_tournamentPagerFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/leagueMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tournamentsMenuFragment"
+        android:name="com.example.letsdart.fragments.tournament.TournamentsMenuFragment"
+        android:label="TournamentsMenuFragment">
+        <action
+            android:id="@+id/action_tournamentsMenuFragment_to_tournamentRulesFragment"
+            app:destination="@id/tournamentRulesFragment" />
+        <action
+            android:id="@+id/action_tournamentsMenuFragment_to_tournamentPagerFragment"
+            app:destination="@id/tournamentPagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tournamentRulesFragment"
+        android:name="com.example.letsdart.fragments.tournament.TournamentRulesFragment"
+        android:label="tournament_rules_fragment"
+        tools:layout="@layout/tournament_rules_fragment">
+        <action
+            android:id="@+id/action_tournamentRulesFragment_to_choosePlayersTournamentFragment"
+            app:destination="@id/choosePlayersTournamentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choosePlayersTournamentFragment"
+        android:name="com.example.letsdart.fragments.tournament.ChoosePlayersTournamentFragment"
+        android:label="choose_players_tournament_fragment">
+        <action
+            android:id="@+id/action_choosePlayersTournamentFragment_to_tournamentPagerFragment"
+            app:destination="@id/tournamentPagerFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="rules"
+            app:argType="com.example.letsdart.models.general.Rules" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameStatisticsFragment"
+        android:name="com.example.letsdart.fragments.GameStatisticsFragment"
+        android:label="StatisticsFragment">
+        <argument
+            android:name="player"
+            app:argType="com.example.letsdart.models.general.SavedPlayer" />
+        <argument
+            android:name="statistics"
+            app:argType="com.example.letsdart.models.general.Statistics" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticsListFragment"
+        android:name="com.example.letsdart.fragments.StatisticsListFragment"
+        android:label="StatisticsListFragment">
+        <action
+            android:id="@+id/action_statisticsListFragment_to_statisticsFragment"
+            app:destination="@id/statisticsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.example.letsdart.fragments.StatisticsFragment"
+        android:label="StatisticsFragment">
+        <argument
+            android:name="player"
+            app:argType="com.example.letsdart.models.general.SavedPlayer" />
+    </fragment>
+</navigation>

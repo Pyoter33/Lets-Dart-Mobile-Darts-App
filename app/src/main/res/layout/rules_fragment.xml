@@ -331,6 +331,7 @@
             android:paddingBottom="8dp"
             android:text="@string/text_continue"
             android:textSize="20sp"
+            app:cornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.50"

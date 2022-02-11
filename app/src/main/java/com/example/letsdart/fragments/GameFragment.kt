@@ -189,7 +189,7 @@ class GameFragment : Fragment(), AbortGameDialogInterface, EndGameDialogInterfac
     private fun observeDecider() {
         viewModel.deciderRandom.observe(viewLifecycleOwner, {
             if (it != 0)
-                Toast.makeText(context, "Starter of deciding set chosen!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Starter of deciding leg chosen!", Toast.LENGTH_SHORT).show()
         })
 
     }

@@ -7,4 +7,5 @@ interface Series {
     var name: String
     var date: Long
     var rules: Rules
+    val playersList: List<SeriesPlayer>
 }

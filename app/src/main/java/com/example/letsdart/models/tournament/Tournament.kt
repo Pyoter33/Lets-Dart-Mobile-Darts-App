@@ -26,7 +26,7 @@ data class Tournament(
     override var id: Long = 0L
 ): Series {
     @Ignore
-    var playersList: List<SeriesPlayer> = listOf()
+    override var playersList: List<SeriesPlayer> = listOf()
     @Ignore
     var matchups: MutableMap<Int,List<TournamentMatchup>> = mutableMapOf()
 }

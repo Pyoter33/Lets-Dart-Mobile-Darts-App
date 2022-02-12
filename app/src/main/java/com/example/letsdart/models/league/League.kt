@@ -25,7 +25,8 @@ data class League  (
     override var id: Long = 0L,
 ): Series
 {
-    @Ignore var playersList: List<SeriesPlayer> = listOf()
+    @Ignore
+    override var playersList: List<SeriesPlayer> = listOf()
     @Ignore var matchupsList: List<LeagueMatchup> = listOf()
 
 }

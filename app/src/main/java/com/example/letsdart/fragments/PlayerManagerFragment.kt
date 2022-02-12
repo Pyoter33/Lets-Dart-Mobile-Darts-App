@@ -1,10 +1,12 @@
 package com.example.letsdart.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,11 +46,12 @@ class PlayerManagerFragment : Fragment(), PlayerInterface, DeleteInterface, Play
         advancedAdapter = PlayersListAdvancedAdapter(this)
         binding.savedPlayerList.adapter = advancedAdapter
         binding.savedPlayerList.layoutManager = LinearLayoutManager(context)
-        val viewModelFactory = PlayerManagerViewModelFactory((application as Application).playersRepository)
+        val viewModelFactory = PlayerManagerViewModelFactory((application as Application).playersRepository, application.tournamentsRepository, application.leaguesRepository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(PlayerManagerViewModel::class.java)
         createPlayerDialog = CreatePlayerDialog(this)
 
         observePlayerList()
+        observeDeletionCheck()
         setOnCreateNewPlayerClickListener()
     }
 
@@ -62,6 +65,18 @@ class PlayerManagerFragment : Fragment(), PlayerInterface, DeleteInterface, Play
         binding.buttonCreate.setOnClickListener {
             createPlayerDialog.show(childFragmentManager, "CreatePlayerDialog")
         }
+    }
+
+    private fun observeDeletionCheck() {
+        viewModel.deletionCheckResult.observe(viewLifecycleOwner,{ result ->
+            Log.i("result", result.toString())
+            if (result == null) {
+                Toast.makeText(requireContext(), "You cannot delete a player who still participates in a series!", Toast.LENGTH_SHORT).show()
+            } else {
+                viewModel.deletePlayer(result)
+            }
+        })
+
     }
 
 
@@ -84,7 +99,7 @@ class PlayerManagerFragment : Fragment(), PlayerInterface, DeleteInterface, Play
     }
 
     override fun <T> delete(item: T) {
-        viewModel.deletePlayer(item as SavedPlayer)
+        viewModel.checkPlayerDeletion(item as SavedPlayer)
     }
 
 }

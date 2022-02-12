@@ -18,9 +18,11 @@ import com.example.letsdart.models.general.SavedPlayer
 import com.example.letsdart.utils.Application
 import com.example.letsdart.viewModels.players.PlayerManagerViewModel
 import com.example.letsdart.viewModels.players.PlayerManagerViewModelFactory
+import com.example.letsdart.viewModels.players.StatisticsListViewModel
+import com.example.letsdart.viewModels.players.StatisticsListViewModelFactory
 
 class StatisticsListFragment :Fragment(), StatisticsClickListener {
-    private lateinit var viewModel: PlayerManagerViewModel
+    private lateinit var viewModel: StatisticsListViewModel
     private lateinit var binding: StatisticsListFragmentBinding
     private lateinit var statisticsAdapter: StatisticsListAdapter
 
@@ -38,8 +40,8 @@ class StatisticsListFragment :Fragment(), StatisticsClickListener {
         statisticsAdapter = StatisticsListAdapter(this)
         binding.savedPlayerList.adapter = statisticsAdapter
         binding.savedPlayerList.layoutManager = LinearLayoutManager(context)
-        val viewModelFactory = PlayerManagerViewModelFactory((application as Application).playersRepository)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(PlayerManagerViewModel::class.java)
+        val viewModelFactory = StatisticsListViewModelFactory((application as Application).playersRepository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(StatisticsListViewModel::class.java)
 
         observePlayerList()
     }

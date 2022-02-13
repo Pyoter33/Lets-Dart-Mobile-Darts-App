@@ -23,8 +23,8 @@ import com.example.letsdart.dialogs.EndGameDialogInterface
 import com.example.letsdart.models.general.Player
 import com.example.letsdart.models.general.QuickMatchup
 import com.example.letsdart.models.league.LeagueMatchup
-import com.example.letsdart.viewModels.game.GameViewModel
-import com.example.letsdart.viewModels.game.GameViewModelFactory
+import com.example.letsdart.viewmodels.game.GameViewModel
+import com.example.letsdart.viewmodels.game.GameViewModelFactory
 
 class GameFragment : Fragment(), AbortGameDialogInterface, EndGameDialogInterface {
     private lateinit var viewModel: GameViewModel

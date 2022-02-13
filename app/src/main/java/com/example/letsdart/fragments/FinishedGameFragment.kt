@@ -12,8 +12,8 @@ import com.example.letsdart.utils.Application
 import com.example.letsdart.models.general.QuickMatchup
 import com.example.letsdart.R
 import com.example.letsdart.databinding.FinishedGameFragmentBinding
-import com.example.letsdart.viewModels.game.FinishedGameViewModel
-import com.example.letsdart.viewModels.game.FinishedGameViewModelFactory
+import com.example.letsdart.viewmodels.game.FinishedGameViewModel
+import com.example.letsdart.viewmodels.game.FinishedGameViewModelFactory
 import com.example.letsdart.models.league.LeagueMatchup
 import com.example.letsdart.database.tournamentDatabase.TournamentMatchup
 

@@ -1,9 +1,10 @@
-package com.example.letsdart.viewModels.game
+package com.example.letsdart.viewmodels.game
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.example.letsdart.database.playersDatabase.PlayersRepository
+import com.example.letsdart.models.general.PlayerListItem
 import com.example.letsdart.models.general.SavedPlayer
 
 class PrepareGameViewModel(repository: PlayersRepository) : ViewModel() {
@@ -23,8 +24,13 @@ class PrepareGameViewModel(repository: PlayersRepository) : ViewModel() {
 
     val playersList: LiveData<List<SavedPlayer>> = repository.playersList.asLiveData()
     val chosenPlayersList: MutableList<SavedPlayer> = mutableListOf()
-    val pairsList: MutableList<Pair<SavedPlayer, Boolean>> = mutableListOf()
 
+    fun createPairs(list: List<SavedPlayer>): List<PlayerListItem> {
+        val pairsList: MutableList<PlayerListItem> = mutableListOf()
+        for (elem in list)
+            pairsList.add(PlayerListItem(elem, false))
+        return pairsList
+    }
 
     fun addPlayerToList(player: SavedPlayer) {
         chosenPlayersList.add(player)

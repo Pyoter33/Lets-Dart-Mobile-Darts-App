@@ -8,7 +8,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.letsdart.utils.Application
@@ -18,8 +17,8 @@ import com.example.letsdart.R
 import com.example.letsdart.adapters.LeagueClickListener
 import com.example.letsdart.adapters.LeagueListAdapter
 import com.example.letsdart.databinding.CreateLeagueFragmentBinding
-import com.example.letsdart.viewModels.league.LeaguesMenuViewModel
-import com.example.letsdart.viewModels.league.LeaguesMenuViewModelFactory
+import com.example.letsdart.viewmodels.league.LeaguesMenuViewModel
+import com.example.letsdart.viewmodels.league.LeaguesMenuViewModelFactory
 import com.example.letsdart.models.league.League
 
 class LeaguesMenuFragment : Fragment(), LeagueClickListener, DeleteInterface {

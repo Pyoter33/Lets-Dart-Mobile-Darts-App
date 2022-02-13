@@ -1,4 +1,4 @@
-package com.example.letsdart.viewModels.tournament
+package com.example.letsdart.viewmodels.tournament
 import androidx.lifecycle.ViewModel
 
 class TournamentRulesViewModel: ViewModel() {

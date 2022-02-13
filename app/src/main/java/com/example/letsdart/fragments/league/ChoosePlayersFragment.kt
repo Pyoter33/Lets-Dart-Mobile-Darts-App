@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
@@ -15,15 +16,16 @@ import com.example.letsdart.R
 import com.example.letsdart.adapters.BasicClickListener
 import com.example.letsdart.adapters.PlayersListBasicAdapter
 import com.example.letsdart.databinding.ChoosePlayersFragmentBinding
-import com.example.letsdart.viewModels.league.ChoosePlayersViewModel
-import com.example.letsdart.viewModels.league.ChoosePlayersViewModelFactory
+import com.example.letsdart.models.general.PlayerListItem
+import com.example.letsdart.viewmodels.league.ChoosePlayersViewModel
+import com.example.letsdart.viewmodels.league.ChoosePlayersViewModelFactory
 
 
-class ChoosePlayersFragment : Fragment(), BasicClickListener {
+class ChoosePlayersFragment : Fragment(), BasicClickListener, SearchView.OnQueryTextListener {
 
     private lateinit var viewModel: ChoosePlayersViewModel
     private lateinit var binding: ChoosePlayersFragmentBinding
-    private lateinit var basicAdapter: PlayersListBasicAdapter
+    private lateinit var adapter: PlayersListBasicAdapter
     private lateinit var args: ChoosePlayersFragmentArgs
 
     override fun onCreateView(
@@ -38,8 +40,8 @@ class ChoosePlayersFragment : Fragment(), BasicClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         val application = requireNotNull(this.activity).application
-        basicAdapter = PlayersListBasicAdapter(this)
-        binding.playersList.adapter = basicAdapter
+        adapter = PlayersListBasicAdapter(this)
+        binding.playersList.adapter = adapter
         binding.playersList.layoutManager = LinearLayoutManager(context)
         args = ChoosePlayersFragmentArgs.fromBundle(requireArguments())
 
@@ -55,6 +57,7 @@ class ChoosePlayersFragment : Fragment(), BasicClickListener {
         observePlayersList()
         observeCreatedLeague()
         setOnCreateClickListener()
+        setOnFilterPlayersListener()
     }
 
     private fun observeCreatedLeague(){
@@ -70,12 +73,16 @@ class ChoosePlayersFragment : Fragment(), BasicClickListener {
 
     private fun observePlayersList() {
         viewModel.playersList.observe(viewLifecycleOwner, { list ->
-            basicAdapter.submitList(viewModel.createPairs(list))
+            adapter.submitList(viewModel.createPairs(list))
         })
     }
 
+    private fun setOnFilterPlayersListener() {
+        binding.searchViewFilter.setOnQueryTextListener(this)
+    }
+
     private fun setOnCreateClickListener() {
-        binding.buttonCreate.setOnClickListener {
+        binding.buttonContinue.setOnClickListener {
             if(viewModel.chosenSavedPlayers.size < 3) {
                 Toast.makeText(requireContext(), "Choose at least 3 players to start a league!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -89,20 +96,28 @@ class ChoosePlayersFragment : Fragment(), BasicClickListener {
     }
 
 
-    override fun onItemClicked(position: Int) {
-        val currentElem = viewModel.pairsList[position]
-        if (!viewModel.chosenSavedPlayers.contains(currentElem.first)) {
-            viewModel.chosenSavedPlayers.add(currentElem.first)
-            viewModel.pairsList[position] = Pair(currentElem.first, !currentElem.second)
-            basicAdapter.notifyItemChanged(position)
+    override fun onItemClicked(playerListItem: PlayerListItem, position: Int) {
+        if (!viewModel.chosenSavedPlayers.contains(playerListItem.player)) {
+            viewModel.chosenSavedPlayers.add(playerListItem.player)
+            playerListItem.isChosen = true
+            adapter.notifyItemChanged(position)
         }
     }
 
-    override fun onItemUnClicked(position: Int) {
-        val currentElem = viewModel.pairsList[position]
-        viewModel.chosenSavedPlayers.remove(currentElem.first)
-        viewModel.pairsList[position] = Pair(currentElem.first, !currentElem.second)
-        basicAdapter.notifyItemChanged(position)
+    override fun onItemUnClicked(playerListItem: PlayerListItem, position: Int) {
+        viewModel.chosenSavedPlayers.remove(playerListItem.player)
+        playerListItem.isChosen = false
+        adapter.notifyItemChanged(position)
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        adapter.filter.filter(query)
+        return false
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        adapter.filter.filter(newText)
+        return false
     }
 
 }

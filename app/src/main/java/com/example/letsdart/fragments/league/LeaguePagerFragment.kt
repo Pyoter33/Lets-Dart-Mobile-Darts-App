@@ -13,8 +13,8 @@ import com.example.letsdart.R
 import com.example.letsdart.adapters.LeaguePagerAdapter
 import com.example.letsdart.databinding.LeaguePagerFragmentBinding
 import com.example.letsdart.utils.Application
-import com.example.letsdart.viewModels.league.LeaguePagerViewModel
-import com.example.letsdart.viewModels.league.LeaguePagerViewModelFactory
+import com.example.letsdart.viewmodels.league.LeaguePagerViewModel
+import com.example.letsdart.viewmodels.league.LeaguePagerViewModelFactory
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

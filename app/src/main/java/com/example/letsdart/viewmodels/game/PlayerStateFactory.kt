@@ -1,4 +1,4 @@
-package com.example.letsdart.viewModels.game
+package com.example.letsdart.viewmodels.game
 
 import android.util.Log
 import com.example.letsdart.models.general.*

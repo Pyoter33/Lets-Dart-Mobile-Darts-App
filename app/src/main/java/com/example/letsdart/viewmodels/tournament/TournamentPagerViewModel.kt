@@ -1,4 +1,4 @@
-package com.example.letsdart.viewModels.tournament
+package com.example.letsdart.viewmodels.tournament
 
 import android.util.Log
 import androidx.lifecycle.LiveData

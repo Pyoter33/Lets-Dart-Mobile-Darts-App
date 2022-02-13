@@ -15,8 +15,8 @@ import com.example.letsdart.adapters.TournamentPagerAdapter
 import com.example.letsdart.database.tournamentDatabase.TournamentMatchup
 import com.example.letsdart.databinding.TournamentPagerFragmentBinding
 import com.example.letsdart.models.tournament.Tournament
-import com.example.letsdart.viewModels.tournament.TournamentPagerViewModel
-import com.example.letsdart.viewModels.tournament.TournamentPagerViewModelFactory
+import com.example.letsdart.viewmodels.tournament.TournamentPagerViewModel
+import com.example.letsdart.viewmodels.tournament.TournamentPagerViewModelFactory
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

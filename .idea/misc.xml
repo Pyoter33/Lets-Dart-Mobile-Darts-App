@@ -21,7 +21,7 @@
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/drawable/stats_background_selector.xml" value="0.301953125" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/advanced_list_item.xml" value="0.2" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/basic_list_item.xml" value="0.22301912568306012" />
-        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/choose_players_fragment.xml" value="0.22301912568306012" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/choose_players_fragment.xml" value="0.2682370820668693" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/choose_players_tournament_fragment.xml" value="0.22301912568306012" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/create_league_fragment.xml" value="0.19467213114754098" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/create_player_dialog.xml" value="0.264" />
@@ -39,7 +39,7 @@
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/matchups_list_item.xml" value="0.2" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/menu_fragment.xml" value="0.22301912568306012" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/player_manager_fragment.xml" value="0.19467213114754098" />
-        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/prepare_game_fragment.xml" value="0.183984375" />
+        <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/prepare_game_fragment.xml" value="0.264" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/rename_player_dialog.xml" value="0.18169398907103826" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/rules_fragment.xml" value="0.2" />
         <entry key="..\:/Users/48794/AndroidStudioProjects/LetsDart/app/src/main/res/layout/statistics_fragment.xml" value="0.264" />

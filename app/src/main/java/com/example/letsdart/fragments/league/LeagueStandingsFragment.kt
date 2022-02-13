@@ -11,7 +11,7 @@ import com.example.letsdart.R
 import com.example.letsdart.adapters.LeaguePlayersListAdapter
 import com.example.letsdart.databinding.LeagueStandingsFragmentBinding
 import com.example.letsdart.utils.LeaguePlayersComparator
-import com.example.letsdart.viewModels.league.LeaguePagerViewModel
+import com.example.letsdart.viewmodels.league.LeaguePagerViewModel
 
 
 class LeagueStandingsFragment(private val viewModel: LeaguePagerViewModel) : Fragment() {

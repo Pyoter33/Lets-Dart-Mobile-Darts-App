@@ -1,4 +1,4 @@
-package com.example.letsdart.viewModels.game
+package com.example.letsdart.viewmodels.game
 
 import android.content.res.Resources
 import org.apache.poi.hssf.usermodel.HSSFWorkbook

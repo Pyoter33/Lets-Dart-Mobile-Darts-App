@@ -12,14 +12,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.letsdart.R
 import com.example.letsdart.adapters.StatisticsClickListener
 import com.example.letsdart.adapters.StatisticsListAdapter
-import com.example.letsdart.databinding.PlayerManagerFragmentBinding
 import com.example.letsdart.databinding.StatisticsListFragmentBinding
 import com.example.letsdart.models.general.SavedPlayer
 import com.example.letsdart.utils.Application
-import com.example.letsdart.viewModels.players.PlayerManagerViewModel
-import com.example.letsdart.viewModels.players.PlayerManagerViewModelFactory
-import com.example.letsdart.viewModels.players.StatisticsListViewModel
-import com.example.letsdart.viewModels.players.StatisticsListViewModelFactory
+import com.example.letsdart.viewmodels.players.StatisticsListViewModel
+import com.example.letsdart.viewmodels.players.StatisticsListViewModelFactory
 
 class StatisticsListFragment :Fragment(), StatisticsClickListener {
     private lateinit var viewModel: StatisticsListViewModel

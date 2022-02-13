@@ -1,7 +1,6 @@
 package com.example.letsdart.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,8 +15,8 @@ import com.example.letsdart.adapters.PlayersListAdvancedAdapter
 import com.example.letsdart.models.general.SavedPlayer
 import com.example.letsdart.databinding.PlayerManagerFragmentBinding
 import com.example.letsdart.dialogs.*
-import com.example.letsdart.viewModels.players.PlayerManagerViewModel
-import com.example.letsdart.viewModels.players.PlayerManagerViewModelFactory
+import com.example.letsdart.viewmodels.players.PlayerManagerViewModel
+import com.example.letsdart.viewmodels.players.PlayerManagerViewModelFactory
 import com.example.letsdart.utils.Application
 
 class PlayerManagerFragment : Fragment(), PlayerInterface, DeleteInterface, PlayerListInterface {
@@ -62,21 +61,19 @@ class PlayerManagerFragment : Fragment(), PlayerInterface, DeleteInterface, Play
     }
 
     private fun setOnCreateNewPlayerClickListener() {
-        binding.buttonCreate.setOnClickListener {
+        binding.buttonContinue.setOnClickListener {
             createPlayerDialog.show(childFragmentManager, "CreatePlayerDialog")
         }
     }
 
     private fun observeDeletionCheck() {
         viewModel.deletionCheckResult.observe(viewLifecycleOwner,{ result ->
-            Log.i("result", result.toString())
             if (result == null) {
                 Toast.makeText(requireContext(), "You cannot delete a player who still participates in a series!", Toast.LENGTH_SHORT).show()
             } else {
                 viewModel.deletePlayer(result)
             }
         })
-
     }
 
 

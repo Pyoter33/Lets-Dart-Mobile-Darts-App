@@ -1,6 +1,5 @@
-package com.example.letsdart.viewModels.players
+package com.example.letsdart.viewmodels.players
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.example.letsdart.database.leagueDatabase.LeaguesRepository
 import com.example.letsdart.database.playersDatabase.PlayersRepository

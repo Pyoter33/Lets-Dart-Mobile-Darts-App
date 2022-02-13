@@ -1,49 +1,48 @@
-package com.example.letsdart.viewModels.tournament
+package com.example.letsdart.viewmodels.league
 
 import androidx.lifecycle.*
 import com.example.letsdart.models.general.Rules
+import com.example.letsdart.utils.GamesGenerator
+import com.example.letsdart.models.league.League
 import com.example.letsdart.models.series.SeriesPlayer
+import com.example.letsdart.database.leagueDatabase.LeaguesRepository
 import com.example.letsdart.database.playersDatabase.PlayersRepository
+import com.example.letsdart.models.general.PlayerListItem
 import com.example.letsdart.models.general.SavedPlayer
-import com.example.letsdart.utils.MatchupsGenerator
-import com.example.letsdart.models.tournament.Tournament
-import com.example.letsdart.database.tournamentDatabase.TournamentsRepository
 import kotlinx.coroutines.launch
 
-class ChoosePlayersTournamentViewModel(
+class ChoosePlayersViewModel(
     private val name: String,
     private val rules: Rules,
-    private val tournamentsRepository: TournamentsRepository,
+    private val leaguesRepository: LeaguesRepository,
     playersRepository: PlayersRepository
 ) : ViewModel() {
 
     val playersList: LiveData<List<SavedPlayer>> = playersRepository.playersList.asLiveData()
     val chosenSavedPlayers: MutableList<SavedPlayer> = mutableListOf()
-    val pairsList: MutableList<Pair<SavedPlayer, Boolean>> = mutableListOf()
-    private val _createTournamentResult = MutableLiveData(false)
-    val createTournamentResult: LiveData<Boolean> = _createTournamentResult
+    private val _createLeagueResult = MutableLiveData(false)
+    val createLeagueResult: LiveData<Boolean> = _createLeagueResult
 
-    fun createPairs(list: List<SavedPlayer>): List<Pair<SavedPlayer, Boolean>> {
+    fun createPairs(list: List<SavedPlayer>): List<PlayerListItem> {
+        val pairsList: MutableList<PlayerListItem> = mutableListOf()
         for (elem in list)
-            pairsList.add(Pair(elem, false))
+            pairsList.add(PlayerListItem(elem, false))
         return pairsList
     }
-
-    fun createTournament() {
+    fun createLeague() {
         val chosenSeriesPlayers: List<SeriesPlayer> = chosenSavedPlayers.map { player ->
             SeriesPlayer(savedPlayer = player)
         }
+
         viewModelScope.launch {
-            val id = tournamentsRepository.insert(Tournament(name, rules))
+            val id = leaguesRepository.insert(League(name, rules))
             val listWithIds = mutableListOf<SeriesPlayer>()
             for (player in chosenSeriesPlayers){
-               val playerId = tournamentsRepository.insert(id, player)
+                val playerId = leaguesRepository.insert(id, player)
                 listWithIds.add(SeriesPlayer(playerId, player.savedPlayer))
             }
-            tournamentsRepository.insert(id, MatchupsGenerator.generateFirstMatchups(listWithIds, rules))
-            _createTournamentResult.value = true
+            leaguesRepository.insert(id, GamesGenerator.generateGames(listWithIds, rules.rematch))
+            _createLeagueResult.value = true
         }
-
     }
-
 }

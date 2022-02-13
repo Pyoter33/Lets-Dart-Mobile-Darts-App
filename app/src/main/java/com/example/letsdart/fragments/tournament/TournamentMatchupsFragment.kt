@@ -6,13 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.letsdart.R
 import com.example.letsdart.adapters.MatchupListAdapter
 import com.example.letsdart.adapters.TournamentMatchupClickListener
 import com.example.letsdart.databinding.TournamentMatchupsFragmentBinding
-import com.example.letsdart.viewModels.tournament.TournamentPagerViewModel
 import com.example.letsdart.database.tournamentDatabase.TournamentMatchup
 
 

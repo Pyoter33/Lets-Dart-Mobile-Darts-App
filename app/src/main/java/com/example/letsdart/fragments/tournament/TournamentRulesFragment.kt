@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.letsdart.R
 import com.example.letsdart.models.general.Rules
 import com.example.letsdart.databinding.TournamentRulesFragmentBinding
-import com.example.letsdart.viewModels.tournament.TournamentRulesViewModel
+import com.example.letsdart.viewmodels.tournament.TournamentRulesViewModel
 
 class TournamentRulesFragment : Fragment() {
     private lateinit var viewModel: TournamentRulesViewModel
@@ -94,7 +94,7 @@ class TournamentRulesFragment : Fragment() {
 
 
     private fun setOnContinueClickListener(){
-        binding.startButton.setOnClickListener {
+        binding.buttonContinue.setOnClickListener {
             val name = binding.editTextTournamentName.text
             if(!TextUtils.isEmpty(name))
                findNavController().navigate(

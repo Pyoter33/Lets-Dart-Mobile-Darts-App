@@ -1,4 +1,4 @@
-package com.example.letsdart.viewModels.players
+package com.example.letsdart.viewmodels.players
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

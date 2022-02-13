@@ -18,8 +18,8 @@ import com.example.letsdart.databinding.TournamentsMenuFragmentBinding
 import com.example.letsdart.models.tournament.Tournament
 import com.example.letsdart.tournamentCreator.tournamentsMenu.TournamentClickListener
 import com.example.letsdart.tournamentCreator.tournamentsMenu.TournamentListAdapter
-import com.example.letsdart.viewModels.tournament.TournamentsMenuViewModel
-import com.example.letsdart.viewModels.tournament.TournamentsMenuViewModelFactory
+import com.example.letsdart.viewmodels.tournament.TournamentsMenuViewModel
+import com.example.letsdart.viewmodels.tournament.TournamentsMenuViewModelFactory
 
 class TournamentsMenuFragment : Fragment(), TournamentClickListener, DeleteInterface {
 

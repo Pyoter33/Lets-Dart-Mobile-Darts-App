@@ -13,7 +13,7 @@ import com.example.letsdart.R
 import com.example.letsdart.adapters.LeagueGameClickListener
 import com.example.letsdart.adapters.LeagueGamesListAdapter
 import com.example.letsdart.databinding.LeagueGamesFragmentBinding
-import com.example.letsdart.viewModels.league.LeaguePagerViewModel
+import com.example.letsdart.viewmodels.league.LeaguePagerViewModel
 import com.example.letsdart.models.league.LeagueMatchup
 
 class LeagueGamesFragment(private val viewModel: LeaguePagerViewModel) : Fragment(), LeagueGameClickListener {

@@ -1,4 +1,4 @@
-package com.example.letsdart.viewModels.league
+package com.example.letsdart.viewmodels.league
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
